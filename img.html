@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <!-- Propojení CSS -->
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <!-- Záhlaví s odkazem zpět -->
+    <div class="header">
+        <a href="index.html">Google Search</a>
+        <a href="advanced.html">Advanced Search</a>
+    </div>
+
+    <!-- Logo -->
+    <h1>Image Search</h1>
+
+    <!-- Formulář pro vyhledávání obrázků -->
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Search for images...">
+        <input type="hidden" name="tbm" value="isch">
+        <button type="submit" class="search">Search Images</button>
+    </form>
+</body>
+</html>
