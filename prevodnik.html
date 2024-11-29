@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Převodník teplot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: #2d3748;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .converter {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .converter h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+        .converter label {
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+            color: #718096;
+        }
+        .converter input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .converter button {
+            width: 100%;
+            background-color: #3182ce;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .converter button:hover {
+            background-color: #2b6cb0;
+        }
+        .converter p {
+            font-size: 16px;
+            color: #4a5568;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Převodník teplot</h1>
+        <label for="celsius">Zadej teplotu (°C):</label>
+        <input type="number" id="celsius" placeholder="Např. 25">
+        <button onclick="convert()">Převést na °F</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convert() {
+            const celsius = document.getElementById('celsius').value;
+            const resultElement = document.getElementById('result');
+
+            if (celsius === '') {
+                resultElement.textContent = 'Prosím, zadej teplotu.';
+                resultElement.style.color = '#e53e3e'; // Červený text pro chybu
+                return;
+            }
+
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            resultElement.textContent = `${celsius} °C je ${fahrenheit.toFixed(2)} °F.`;
+            resultElement.style.color = '#4a5568'; // Šedý text pro výsledek
+        }
+    </script>
+</body>
+</html>
